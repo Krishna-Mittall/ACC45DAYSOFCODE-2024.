@@ -1,0 +1,22 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k){
+        int n = nums.size();
+
+        vector<int> arr;
+
+        k = k % nums.size();
+
+        int p = n-k;
+
+        for(int i=p; i<n; i++){
+            arr.push_back(nums[i]);
+        }
+        for(int j=0; j<p; j++){
+            arr.push_back(nums[j]);
+        }
+        for(int k=0; k<n; k++){
+            nums[k]=arr[k];
+        } 
+    }
+};
